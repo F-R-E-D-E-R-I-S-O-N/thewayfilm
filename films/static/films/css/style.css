@@ -1,0 +1,349 @@
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+/* @@@@@@@@@@@@@@@@@@@ Base.html @@@@@@@@@@@@@@@@@@@ */
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+html,
+body {
+  background: #1a1a1a;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+.wrapper {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/*@@@@@@@@@@@@@@@@@@@ IT'S A HEADER @@@@@@@@@@@@@@@@@@@*/
+.header {
+  z-index: 1000;
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  height: 65px;
+  background: rgba(0, 0, 0, 0.781);
+  flex-direction: column;
+}
+
+/* it's just a moving white line above all content */
+.line {
+  width: 80%;
+  height: 3px;
+  background: rgb(255, 255, 255);
+  margin-top: 13px;
+  margin-left: -15px;
+
+  transition: 10s;
+}
+.line:hover {
+  width: 0%;
+  transition: 10s;
+}
+
+.block_for_headers_items {
+  height: 50%;
+  width: 1100px;
+  display: flex;
+  align-items: center;
+  justify-content: center space-between;
+  background: rgba(0, 0, 0, 0);
+  margin-left: 10%;
+  margin-bottom: 1px;
+  flex-direction: row;
+}
+
+.logo_and_navigation {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+
+/* icon of logo */
+.logo {
+  width: 200px;
+  height: 30px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+.logo_image {
+  height: 33px;
+  width: 200px;
+  margin: top -5px;
+}
+.navigation a {
+  color: white;
+}
+.navigation {
+  display: flex;
+  flex-direction: row;
+  padding-left: 100px;
+  width: 40%;
+  justify-content: space-between;
+}
+
+/* making a font settings and transition for navigation links */
+.navigation_link {
+  font-weight: 170;
+  font-size: 20px;
+  text-decoration: none;
+  transition: color 0.4s linear;
+  position: relative;
+}
+.navigation_link:after {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: rgb(255, 255, 255);
+  top: 100%;
+  opacity: 0;
+  transition: opacity 1s;
+}
+.navigation_link:hover:after {
+  display: block;
+  opacity: 1;
+}
+.navigation_link:hover {
+  color: rgb(255, 0, 0);
+  transition-duration: 0.4s;
+}
+
+.auth {
+  width: 30px;
+  height: 30px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+.auth_image {
+  width: 30px;
+  height: 30px;
+}
+/*@@@@@@@@@@@@@@ here will be all content @@@@@@@@@@@@@*/
+.main {
+  flex: 1 1 auto;
+}
+/*@@@@@@@@@@@@@@@@@@@ IT'S A FOOTER @@@@@@@@@@@@@@@@@@@*/
+
+.footer {
+  margin-top: 190px;
+  background: rgb(0, 0, 0);
+  width: 100%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+}
+.join_us {
+  height: 70px;
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+}
+.join_in_telegram,
+.join_in_youtube {
+  height: 40px;
+  width: 40px;
+}
+.telegram_image,
+.youtube_image {
+  height: 40px;
+  width: 40px;
+}
+.footer_navigation {
+  height: 70px;
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+}
+.vakancys,
+.advertising,
+.about_us {
+  text-decoration: none;
+  color: white;
+  font-size: 17px;
+  font-weight: 170;
+}
+.copyright {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 70;
+
+}
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+/* @@@@@@@@@@@@@@@@@@@ Index.html @@@@@@@@@@@@@@@@@@ */
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+/* NEW container of movie's trailer */
+.container_pteview_new_film {
+  width: 100%;
+  height: 570px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 0px;
+  display: flex;
+  align-items: flex-end;
+  background: black;
+}
+.preview_new_film {
+  width: 100%;
+  height: 110%;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+}
+
+/* container with gradient under container
+ with movie's trailer */
+
+.gradient_block_start_watching_new_film {
+  margin-top: -120px;
+  width: 100%;
+  height: 150px;
+  background: linear-gradient(#1a1a1a00, black, #1a1a1a);
+  display: flex;
+  align-items: top;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  pointer-events: all;
+}
+
+/* here i making a transition color and size of 
+text under container_trailer_new_film  */
+
+.start_watching_new_film {
+  transition: color 0.4s linear;
+  transition: 1s;
+  text-decoration: none;
+  position: absolute;
+  font-size: 30px;
+  font-weight: 130;
+  color: wheat;
+}
+.start_watching_new_film:hover {
+  color: rgb(255, 0, 0);
+  transition-duration: 0.4s;
+  transform: scale(2);
+}
+
+/* NEW container with last movie made */
+/* watch the lastest movie */
+.title_to_last_made_film {
+  margin-top: 150px;
+  margin-bottom: -20px;
+  height: 100px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+  font-weight: 130;
+  color: wheat;
+}
+.author_name {
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  font-weight: 130;
+  transition: 0.4s;
+}
+.author_name:hover {
+  color: rgba(255, 0, 0, 0.74);
+  transition-duration: 0.4s;
+}
+
+/* NEW container */
+.container_last_film_made_and_its_description {
+  margin-top: 30px;
+  width: 100%;
+  height: 380px;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(to right, rgb(0, 0, 0) 50%, #ff000000 30%);
+}
+.left_block_last_film_made {
+  width: 700px;
+  height: 380px;
+  background: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+}
+.last_film_image {
+  width: 100%;
+}
+
+.right_block_description_of_last_film_made {
+  width: 45%;
+  height: 380px;
+  background: linear-gradient(to right, rgb(0, 0, 0), #1a1a1a);
+  text-align: center;
+  color: wheat;
+  font-size: 20px;
+  font-weight: 170;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.name_last_film {
+  text-align: center;
+  color: rgb(252, 218, 155);
+  font-weight: 170;
+  text-decoration: none;
+  font-size: 40px;
+}
+.link_for_whatching {
+  text-decoration: none;
+  color: rgb(114, 114, 0);
+}
+.link_for_whatching:hover {
+  text-decoration: none;
+  color: rgb(255, 255, 0);
+}
+
+/* NEW container block news */
+
+.container_with_last_news {
+  margin-top: 190px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.title_to_last_news {
+  margin-bottom: -20px;
+  display: flex;
+  justify-content: center;
+  font-size: 40px;
+  font-weight: 130;
+  color: wheat;
+  text-decoration: none;
+  transition: color 0.4s linear;
+}
+.title_to_last_news:hover {
+  font-size: 40px;
+  font-weight: 130;
+  color: red;
+  text-decoration: none;
+  transition-duration: 0.4s;
+}
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+/* @@@@@@@@@@@@@@@@@@@@ news.html @@@@@@@@@@@@@@@@@@@ */
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */

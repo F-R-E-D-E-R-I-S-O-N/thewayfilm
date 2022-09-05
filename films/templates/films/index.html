@@ -1,0 +1,81 @@
+{% extends 'films/base.html' %} {% load static %} {% block content %}
+
+<!-- big container #1 with new movie trailer -->
+<div class="container_pteview_new_film">
+  <div class="preview_new_film">
+    <iframe
+      tabindex="-1"
+      width="100%"
+      height="100%"
+      frameborder="0"
+      allowtransparency="true"
+      src="https://www.youtube.com/embed/ak1VKcYSKEw?listType=playlist$rel=0&autoplay=1&controls=0&showinfo=0&iv_load_policy=3&mute=1&disablekb=1&loop=1&playlist=ak1VKcYSKEw"
+      >
+    </iframe>
+    <!-- cool vid for example K4A5z_JNGuM -->
+    <div class="gradient_block_start_watching_new_film">
+      <a
+        target="_blank"
+        href="https://www.youtube.com/watch?v=ak1VKcYSKEw"
+        class="start_watching_new_film"
+        >Start wathcing this trailer or film</a
+      >
+    </div>
+  </div>
+</div>
+
+<!-- big container #2 with latest movie made -->
+<div class="title_to_last_made_film">
+  <p>
+    Watch other movies by
+    <a class="author_name" href="#">Rodion Tarchkovsky</a>
+  </p>
+</div>
+<div class="container_last_film_made_and_its_description">
+  <div class="left_block_last_film_made">
+    <a target="_blank" href="https://www.youtube.com/watch?v=R_USm_07f6A">
+    <img
+      class="last_film_image"
+      src="{% static 'films/images/vietnam_movie.jpg' %}"
+    />
+  </a>
+  </div>
+  <div class="right_block_description_of_last_film_made">
+    <div>
+      <a href="#" class="name_last_film" id="main_movie_discription">ВЬЕТНАМ</a>
+    </div>
+    <div>
+      <p>
+        Смотрите новый фильм Родиона Тарчковского "Вьетнам".
+        <br />
+        Увлекательная и захватывающая история летчиков боевого вертолета
+        "Ястреб-228", капрала Мартина Уокера
+        <br />
+        и рядового Джона Луго в опасном Вьетнаме.
+        <br />
+        <br>
+        Watch the new film by Rodion Tarchkovsky "Vietnam".
+        <br />
+        Fascinating and exciting story of combat helicopter pilots
+        Hawk 228, Corporal Martin Walker
+        <br />
+        and Private John Lugo in dangerous Vietnam.
+        <br />
+      </p>
+    </div>
+    <div>
+      <a
+        target="_blank"
+        href="https://www.youtube.com/watch?v=R_USm_07f6A"
+        class="link_for_whatching"
+        >Погрузиться сейчас</a
+      >
+    </div>
+  </div>
+</div>
+<div class="container_with_last_news">
+  <a class="title_to_last_news" href="#">Read the all relevant news</a>
+</div>
+
+
+. {% endblock content %}

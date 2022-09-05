@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head lang="en">
+    <!-- 
+<link type="text/css" href="{% static 'films/css/style.css' %}" rel="stylesheet" />
+<meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+-->
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="-1" />
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Type" content="text/html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'films/css/style.css' %}" />
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <div class="header">
+          <div class="line"></div>
+          <div class="block_for_headers_items">
+            <div class="logo_and_navigation">
+              <div class="logo">
+                <a href="/">
+                  <img
+                    class="logo_image"
+                    src="{% static 'films/images/main_logo.png' %}"
+                  />
+                </a>
+              </div>
+              <div class="navigation">
+                <a href="/news/" class="navigation_link">News</a>
+                <a href="/catalog/" class="navigation_link">Movies & Trailers</a>
+                <a href="#" class="navigation_link">Crew</a>
+              </div>
+            </div>
+            <div class="auth">
+              <a href="#">
+                <img
+                  class="auth_image"
+                  src="{% static 'films/images/auth.png' %}"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="main">{% block content %} {% endblock content %}</div>
+      <footer class="footer">
+        <div class="join_us">
+          <div class="join_in_telegram">
+            <a target="_blank" href="https://telegram.me/thewayfilm">
+              <img
+                class="telegram_image"
+                src="{% static 'films/images/telegram_logo.png' %}"
+              />
+            </a>
+          </div>
+          <div class="join_in_youtube">
+            <a
+              target="_blank"
+              href="https://www.youtube.com/channel/UCwV_vxMOSfXVr1uqq6PYjzA"
+            >
+              <img
+                class="youtube_image"
+                src="{% static 'films/images/youtube_logo.png' %}"
+              />
+            </a>
+          </div>
+        </div>
+        <div class="footer_navigation">
+          <a class="vakancys" href="">Vakancys | Вакансии</a>
+          <a class="advertising" href="">Advertising | Реклама</a>
+          <a class="about_us" href="">About us | О нас</a>
+        </div>
+        <div class="copyright">
+            <p>
+              Copyright ©2019-2022. the WAY Film® . Copying, use or distribution
+              of materials belonging to The WAY Film without the approval of
+              Rodion Torchkovsky is strictly prohibited.
+            </p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
