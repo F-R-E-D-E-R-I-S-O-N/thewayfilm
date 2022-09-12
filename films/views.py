@@ -6,7 +6,6 @@ import random
 def index(request):
     new_film=FilmsCatalog.objects.get(new_film=True)
     random_film = FilmsCatalog.objects.exclude(new_film=True).order_by('?')[1]
-    print('!' * 40, random_film)
     return render(request, "films/index.html", {'new_film': new_film, 'random_film': random_film, 'title': 'TWF'})
 
 
@@ -25,5 +24,4 @@ def crew(request):
 
 def news(request):
     films=FilmsCatalog.objects.all()
-    amount = ['suck'] * 20
     return render(request, "films/news.html", {'amount': amount, 'films': films, 'title': 'TWF: NEWS'})
