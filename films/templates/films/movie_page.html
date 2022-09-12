@@ -1,0 +1,11 @@
+{% extends 'films/base.html' %} {% load static %} 
+
+{% block content %}
+<!-- here i will use abbreviation mp_... (movie page)
+    to style.css works correct -->
+    <div class="mp_main_conatiner">
+        <div class="mp_all_content">
+            <div class="mp_film_title">{{ film.title }} ({{ film.release_year }})</div>
+        </div>
+    </div>
+{% endblock content %}

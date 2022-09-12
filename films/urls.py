@@ -5,5 +5,6 @@ urlpatterns = [
     path('', index, name='home'),
     path('catalog/', films_catalog, name='catalog'),
     path('crew/', crew, name='crew'),
-    path('news/', news, name='news')
+    path('news/', news, name='news'),
+    path('catalog/<str:title>/', view_film, name='film'),
 ]

@@ -16,72 +16,74 @@
     <title>{{ title }}</title>
   </head>
   <body>
-    <div class="wrapper">
+    <div class="base-wrapper">
       <header>
-        <div class="header">
-          <div class="line"></div>
-          <div class="block_for_headers_items">
-            <div class="logo_and_navigation">
-              <div class="logo">
-                <a href="/">
+        <div class="base-header">
+          <div class="base-header__line"></div>
+          <div class="base-header__container">
+            <div class="base-header__logo_and_breadcrumbs">
+
+                <a class="base-header__link_logo" href="/">
                   <img
-                    class="logo_image"
+                    class="base-header__logo"
                     src="{% static 'films/images/main_logo.png' %}"
                   />
                 </a>
-              </div>
-              <div class="navigation">
-                <a href="/news/" class="navigation_link">News</a>
-                <a href="/catalog/" class="navigation_link">Movies & Trailers</a>
-                <a href="#" class="navigation_link">Crew</a>
-              </div>
+
+              <span class="base-header__breadcrumbs">
+                <a href="/news/" class="base-header__breadcrumbs_link">News</a>
+                <a href="/catalog/" class="base-header__breadcrumbs_link">Movies & Trailers</a>
+                <a href="/crew/" class="base-header__breadcrumbs_link">Crew</a>
+              </span>
             </div>
-            <div class="auth">
-              <a href="#">
+              <a class="base-header__link_auth" href="#">
                 <img
-                  class="auth_image"
+                  class="base-header__image_auth"
                   src="{% static 'films/images/auth.png' %}"
                 />
               </a>
-            </div>
           </div>
         </div>
       </header>
-      <div class="main">{% block content %} {% endblock content %}</div>
-      <footer class="footer">
-        <div class="join_us">
-          <div class="join_in_telegram">
-            <a target="_blank" href="https://telegram.me/thewayfilm">
+
+
+
+      <div class="main">
+        {% block content %} {% endblock content %}
+      </div>
+
+
+      
+      <footer class="base-footer">
+        <div class="base-footer__join_us">
+            <a class="base-footer__join_us__link_tg"
+               target="_blank" 
+               href="https://telegram.me/thewayfilm">
               <img
-                class="telegram_image"
+                class="base-footer__tg_logo"
                 src="{% static 'films/images/telegram_logo.png' %}"
               />
             </a>
-          </div>
-          <div class="join_in_youtube">
-            <a
-              target="_blank"
-              href="https://www.youtube.com/channel/UCwV_vxMOSfXVr1uqq6PYjzA"
+            <a class="base-footer__join_us-link_yt"
+               target="_blank"
+               href="https://www.youtube.com/channel/UCwV_vxMOSfXVr1uqq6PYjzA"
             >
               <img
-                class="youtube_image"
+                class="base-footer__yt_logo"
                 src="{% static 'films/images/youtube_logo.png' %}"
               />
             </a>
-          </div>
         </div>
-        <div class="footer_navigation">
-          <a class="vakancys" href="">Vakancys | Вакансии</a>
-          <a class="advertising" href="">Advertising | Реклама</a>
-          <a class="about_us" href="">About us | О нас</a>
-        </div>
-        <div class="copyright">
-            <p>
-              Copyright ©2019-2022. the WAY Film® . Copying, use or distribution
-              of materials belonging to The WAY Film without the approval of
-              Rodion Torchkovsky is strictly prohibited.
-            </p>
-        </div>
+        <span class="base-footer__breadcrumbs">
+          <a class="base-footer__breadcrumbs-link" href="">Vakancys | Вакансии</a>
+          <a class="base-footer__breadcrumbs-link" href="">Advertising | Реклама</a>
+          <a class="base-footer__breadcrumbs-link" href="">About us | О нас</a>
+        </span>
+        <p class="base-footer__copyright">
+          Copyright ©2019-2022. the WAY Film® . Copying, use or distribution
+          of materials belonging to The WAY Film without the approval of
+          Rodion Torchkovsky is strictly prohibited.
+        </p>
       </footer>
     </div>
   </body>

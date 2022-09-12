@@ -1,3 +1,59 @@
-{% extends 'films/base.html' %} {% load static %} {% block content %}
+{% extends 'films/base.html' %} {% load static %} 
 
-. {% endblock content %}
+{% block content %}
+<!-- cat-... means catalog.html -->
+<h1 class="cat-title_of_category">ᐅ FILMS</h1>
+<div class="cat-main_in_catalog">
+  {% for film in films %}
+    {% if film.mark == 'film' %}
+      <div class="cat-main_in_catalog__tile_border">
+        <a href="/catalog/{{ film.title_for_url }}" class="cat-link_film">
+          <img class="cat-image_tile"
+          src="{% static film.url_image_preview %}"
+          />
+          <div class="cat-text_in_tile">
+            <span class="cat-text_in_tile__raiting_title">
+              <h2 class="cat-text_in_tile__title">{{ film.title }}</h2>
+              <p class="cat-text_in_tile__raiting">{{ film.raiting }}</p>
+            </span>
+            <p class="cat-text_in_tile__description">
+              {% autoescape off %}
+              {{ film.content|truncatewords:19 }}
+              {% endautoescape %}
+            </p>
+            <p class="cat-text_in_tile__genre">{{ film.genre }}</p>
+          </div>
+        </a>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+<h1 class="cat-title_of_category">ᐅ CLIPS</h1>
+<div class="cat-main_in_catalog">
+  {% for film in films %}
+    {% if film.mark == 'clip' %}
+      <div class="cat-main_in_catalog__tile_border">
+        <a href="/catalog/{{ film.title_for_url }}" class="cat-link_film">
+          <img class="cat-image_tile"
+          src="{% static film.url_image_preview %}"
+          />
+          <div class="cat-text_in_tile">
+            <span class="cat-text_in_tile__raiting_title">
+              <h2 class="cat-text_in_tile__title">{{ film.title }}</h2>
+              <p class="cat-text_in_tile__raiting">{{ film.raiting }}</p>
+            </span>
+            <p class="cat-text_in_tile__description">
+              {% autoescape off %}
+              {{ film.content|truncatewords:19 }}
+              {% endautoescape %}
+            </p>
+            <p class="cat-text_in_tile__genre">{{ film.genre }}</p>
+          </div>
+        </a>
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>
+
+{% endblock content %}

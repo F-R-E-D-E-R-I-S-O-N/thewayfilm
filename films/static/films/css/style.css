@@ -2,9 +2,20 @@
 /* @@@@@@@@@@@@@@@@@@@ Base.html @@@@@@@@@@@@@@@@@@@ */
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 
+/* напоминалочки */
+/* сделать в crew прикольчики с 
+.smth:hover
+text-shadow: 1px -10px 0px #ffffff,
+  -1px 10px 0px #ffffff,
+   10px -1px 0px #ffffff,
+  -10px 1px 0px #ffffff; 
+*/ 
+
+
 html,
 body {
   background: #1a1a1a;
+  background-size: cover;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -12,28 +23,28 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
-.wrapper {
+.base-wrapper {
   min-height: 100%;
   display: flex;
   flex-direction: column;
 }
 
 /*@@@@@@@@@@@@@@@@@@@ IT'S A HEADER @@@@@@@@@@@@@@@@@@@*/
-.header {
+.base-header {
   z-index: 1000;
   position: fixed;
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
-  height: 65px;
+  height: 60px;
   background: rgba(0, 0, 0, 0.781);
   flex-direction: column;
 }
 
 /* it's just a moving white line above all content */
-.line {
-  width: 80%;
+.base-header__line {
+  width: 84%;
   height: 3px;
   background: rgb(255, 255, 255);
   margin-top: 13px;
@@ -41,12 +52,13 @@ body {
 
   transition: 10s;
 }
-.line:hover {
+.base-header__line:hover {
+  height: 3px;
   width: 0%;
   transition: 10s;
 }
 
-.block_for_headers_items {
+.base-header__container {
   height: 50%;
   width: 1100px;
   display: flex;
@@ -58,29 +70,29 @@ body {
   flex-direction: row;
 }
 
-.logo_and_navigation {
+.base-header__logo_and_breadcrumbs {
   display: flex;
   flex-direction: row;
   width: 100%;
 }
 
 /* icon of logo */
-.logo {
+.base-header__link_logo {
   width: 200px;
   height: 30px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
-.logo_image {
+.base-header__logo {
   height: 33px;
   width: 200px;
   margin: top -5px;
 }
-.navigation a {
+.base-header__breadcrumbs a {
   color: white;
 }
-.navigation {
+.base-header__breadcrumbs {
   display: flex;
   flex-direction: row;
   padding-left: 100px;
@@ -89,14 +101,15 @@ body {
 }
 
 /* making a font settings and transition for navigation links */
-.navigation_link {
+.base-header__breadcrumbs_link {
   font-weight: 170;
   font-size: 20px;
   text-decoration: none;
   transition: color 0.4s linear;
   position: relative;
+
 }
-.navigation_link:after {
+.base-header__breadcrumbs_link:after {
   position: absolute;
   content: "";
   display: block;
@@ -106,35 +119,39 @@ body {
   top: 100%;
   opacity: 0;
   transition: opacity 1s;
+  
+
 }
-.navigation_link:hover:after {
+.base-header__breadcrumbs_link:hover:after {
   display: block;
   opacity: 1;
 }
-.navigation_link:hover {
+.base-header__breadcrumbs_link:hover {
   color: rgb(255, 0, 0);
   transition-duration: 0.4s;
+  text-shadow: 0px 7px 15px #ffffff;
 }
 
-.auth {
-  width: 30px;
-  height: 30px;
+.base-header__link_auth {
+  width: 40px;
+  height: 40px;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
-.auth_image {
-  width: 30px;
-  height: 30px;
+.base-header__image_auth {
+  width: 40px;
+  height: 40px;
 }
 /*@@@@@@@@@@@@@@ here will be all content @@@@@@@@@@@@@*/
 .main {
   flex: 1 1 auto;
+  width: 100%;
+  height: 100%;
 }
 /*@@@@@@@@@@@@@@@@@@@ IT'S A FOOTER @@@@@@@@@@@@@@@@@@@*/
 
-.footer {
-  margin-top: 190px;
+.base-footer {
   background: rgb(0, 0, 0);
   width: 100%;
   height: 300px;
@@ -144,25 +161,45 @@ body {
   align-items: center;
   justify-content: space-around;
 }
-.join_us {
+
+.base-footer__join_us{
   height: 70px;
   width: 20%;
   display: flex;
   justify-content: center;
   align-items: center;
   justify-content: space-around;
+
 }
-.join_in_telegram,
-.join_in_youtube {
+.base-footer__join_us__link_tg,
+.base-footer__join_us-link_yt {
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+  transition: background 0.8s ease;
+  transition: 1s;
+  
+}
+.base-footer__join_us-link_yt:hover {
+  height: 40px;
+  width: 40px;
+  background: rgba(255, 0, 0, 0.562);
+  border-radius: 100%;
+  box-shadow: 0px 0px 10px rgb(255, 58, 58);
+}
+.base-footer__join_us__link_tg:hover {
+  height: 40px;
+  width: 40px;
+  background: rgba(0, 162, 255, 0.623);
+  border-radius: 100%;
+  box-shadow: 0px 0px 10px rgb(49, 179, 255);
+}
+.base-footer__tg_logo,
+.base-footer__yt_logo {
   height: 40px;
   width: 40px;
 }
-.telegram_image,
-.youtube_image {
-  height: 40px;
-  width: 40px;
-}
-.footer_navigation {
+.base-footer__breadcrumbs {
   height: 70px;
   width: 50%;
   display: flex;
@@ -170,41 +207,45 @@ body {
   justify-content: center;
   justify-content: space-around;
 }
-.vakancys,
-.advertising,
-.about_us {
+.base-footer__breadcrumbs-link {
   text-decoration: none;
   color: white;
   font-size: 17px;
   font-weight: 170;
+  transition-duration: 1s;
 }
-.copyright {
-  height: 70px;
+.base-footer__breadcrumbs-link:hover {
+  font-size: 20px;
+  color: red;
+  text-shadow: 0px 0px 20px rgb(255, 0, 0);
+}
+.base-footer__copyright{
+
+  margin-bottom: 0;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   color: white;
   font-weight: 70;
-
 }
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 /* @@@@@@@@@@@@@@@@@@@ Index.html @@@@@@@@@@@@@@@@@@ */
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 
 /* NEW container of movie's trailer */
-.container_pteview_new_film {
+.ind-new_film {
   width: 100%;
   height: 570px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 0px;
+  padding-top: 3px;
   display: flex;
   align-items: flex-end;
   background: black;
 }
-.preview_new_film {
+.ind-new_film__container_preview {
   width: 100%;
   height: 110%;
   pointer-events: none;
@@ -215,11 +256,11 @@ body {
 /* container with gradient under container
  with movie's trailer */
 
-.gradient_block_start_watching_new_film {
+.ind-new-film__container_link {
   margin-top: -120px;
   width: 100%;
   height: 150px;
-  background: linear-gradient(#1a1a1a00, black, #1a1a1a);
+  background: linear-gradient(#00000000, rgb(0, 0, 0), #1a1a1a);
   display: flex;
   align-items: top;
   justify-content: center;
@@ -228,27 +269,32 @@ body {
   pointer-events: all;
 }
 
+
+
 /* here i making a transition color and size of 
 text under container_trailer_new_film  */
 
-.start_watching_new_film {
+.ind-new-film__link {
   transition: color 0.4s linear;
   transition: 1s;
   text-decoration: none;
   position: absolute;
   font-size: 30px;
   font-weight: 130;
-  color: wheat;
+  color: rgb(255, 255, 255);
+  text-shadow: 0px 0px 3px #ffffff;
 }
-.start_watching_new_film:hover {
+
+
+.ind-new-film__link:hover {
   color: rgb(255, 0, 0);
   transition-duration: 0.4s;
   transform: scale(2);
+  text-shadow: 0px 0px 10px #ff0000;
 }
-
 /* NEW container with last movie made */
 /* watch the lastest movie */
-.title_to_last_made_film {
+.ind-random_film_header {
   margin-top: 150px;
   margin-bottom: -20px;
   height: 100px;
@@ -257,21 +303,21 @@ text under container_trailer_new_film  */
   justify-content: center;
   font-size: 40px;
   font-weight: 130;
-  color: wheat;
+  color: rgb(255, 255, 255);
 }
-.author_name {
+.ind-random_film_header__author_name_link{
   text-decoration: none;
   color: rgb(255, 255, 255);
-  font-weight: 130;
+  font-weight: 200;
   transition: 0.4s;
 }
-.author_name:hover {
-  color: rgba(255, 0, 0, 0.74);
+.ind-random_film_header__author_name_link:hover {
+  color: rgb(255, 0, 0);
   transition-duration: 0.4s;
 }
 
 /* NEW container */
-.container_last_film_made_and_its_description {
+.ind-random_film__container {
   margin-top: 30px;
   width: 100%;
   height: 380px;
@@ -279,43 +325,57 @@ text under container_trailer_new_film  */
   align-items: center;
   background: linear-gradient(to right, rgb(0, 0, 0) 50%, #ff000000 30%);
 }
-.left_block_last_film_made {
+.ind-random_film__link {
+
   width: 700px;
   height: 380px;
   background: rgb(0, 0, 0);
   display: flex;
   align-items: center;
 }
-.last_film_image {
+.ind-random_film__image {
   width: 100%;
+
 }
 
-.right_block_description_of_last_film_made {
+.ind-random_film__content {
   width: 45%;
   height: 380px;
   background: linear-gradient(to right, rgb(0, 0, 0), #1a1a1a);
-  text-align: center;
-  color: wheat;
+  color:white;
   font-size: 20px;
   font-weight: 170;
   display: flex;
+  text-align: center;
+  justify-content: center;
   flex-direction: column;
   justify-content: space-around;
 }
-.name_last_film {
+
+.ind-random_film__content-name_link {
   text-align: center;
-  color: rgb(252, 218, 155);
-  font-weight: 170;
+  color: rgb(255, 255, 255);
+  text-shadow: 0px 0px 5px rgb(255, 255, 255);
+  font-weight: 100;
   text-decoration: none;
   font-size: 40px;
+  transition: 0.7s;
 }
-.link_for_whatching {
+
+.ind-random_film__content-link {
   text-decoration: none;
-  color: rgb(114, 114, 0);
+  color: rgba(255, 0, 0, 0.342);
+  display: block;
+  font-weight: 400;
+  width: 100%;
+  transition: 0.7s;
 }
-.link_for_whatching:hover {
+.ind-random_film__content-link:hover {
+  font-weight: 400;
   text-decoration: none;
-  color: rgb(255, 255, 0);
+  color: rgb(255, 0, 0);
+  text-shadow: 0px 0px 5px rgb(255, 74, 74);
+
 }
 
 /* NEW container block news */
@@ -344,6 +404,176 @@ text under container_trailer_new_film  */
   transition-duration: 0.4s;
 }
 
-/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
-/* @@@@@@@@@@@@@@@@@@@@ news.html @@@@@@@@@@@@@@@@@@@ */
-/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+/* @@@@@@@@@@@@@@@@@@@ catalog.html @@@@@@@@@@@@@@@@@@ */
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+.cat-title_of_category{
+  margin-top: 120px;
+  margin-left: 10%;
+  height: 40px;
+  color: rgb(255, 255, 255);
+  display: flex;
+  font-size: 30px;
+  font-weight: 130;
+  
+}
+.cat-main_in_catalog {
+  width: 82%;
+  height: 80%;
+  margin-top: 40px;
+  margin-left: 8%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.cat-main_in_catalog__tile_border {
+  width:50%;
+  height: 310px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+}
+.cat-main_in_catalog__tile_border:nth-child(even) {
+  justify-content: end;
+
+}
+.cat-link_film {
+  width: 500px;
+  height: 250px;
+  transition: 0.7s;
+  border-radius: 10px;
+  border: 2px solid rgba(0, 0, 0, 0.493);
+  position: relative;
+}
+.cat-link_film:hover {
+  width: 550px;
+  height: 275px;
+  border: 2px solid rgba(255, 0, 0, 0.493);
+  box-shadow: 0px 0px 20px rgb(133, 0, 0);
+}
+.cat-image_tile {
+  width:100%;
+  height: 100%;
+  border-radius: 10px;
+  position: absolute;
+}
+.cat-text_in_tile {
+  position: absolute;
+  color: rgb(255, 255, 255);
+  opacity: 0;
+  transition: 0.7s;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  border-radius: 10px;
+  align-items: center;
+}
+.cat-text_in_tile:hover{
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.911);
+}
+.cat-text_in_tile__raiting_title{
+  width: 90%;
+  margin-left: 35px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.cat-text_in_tile__title {
+  font-size: 35px;
+  font-weight: 100;
+  text-shadow: 0px 0px 10px white;
+}
+.cat-text_in_tile__raiting{
+  margin-left: 20px;
+  background: rgb(0, 31, 7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height:35px;
+  border-radius: 10px;
+  color: wheat;
+}
+.cat-text_in_tile__description{
+  width: 90%;
+  word-wrap: break-word;
+  margin-left: 10px;
+  margin-top: -20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0px 0px 3px red;
+}
+.cat-text_in_tile__genre{
+  width: 90%;
+  font-weight: 100;
+}
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+/* @@@@@@@@@@@@@@@@@ movie_page.html @@@@@@@@@@@@@@@@@ */
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+.mp_main_conatiner{
+  width: 100%;
+  height: 80%;
+  margin-top: 100px;
+  background: red;
+  display: flex;
+  justify-content: center;
+}
+.mp_all_content{
+  width: 80%;
+}
+
+
+
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+/* @@@@@@@@@@@@@@@@@ test.html @@@@@@@@@@@@@@@@@ */
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+.f_c{
+  width: 100%;
+  min-height: 100vh;
+  background: red;
+  margin-top: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fuck {
+  width: 80%;
+  height: 120%;
+  background: green;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.cnt {
+  width:500px;
+  height: 300px;
+  background: rgb(0, 0, 255);
+  border: 1px solid red 
+}
+.cnt:nth-child(even) {
+  background:yellow;
+  display: flex;
+  justify-content: end;
+}
+
+.suck{
+  background: black;
+  width: 350px;
+  height: 200px;
+
+  
+}
+.suck:hover{
+  background: rgb(255, 255, 255);
+  width: 400px;
+  height: 250px
+}
