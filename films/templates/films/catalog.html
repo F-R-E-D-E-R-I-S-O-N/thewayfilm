@@ -29,7 +29,9 @@
   {% endfor %}
 </div>
 
-<h1 class="cat-title_of_category">ᐅ CLIPS</h1>
+
+
+<h1 class="cat-other_title_of_category">ᐅ CLIPS</h1>
 <div class="cat-main_in_catalog">
   {% for film in films %}
     {% if film.mark == 'clip' %}
@@ -55,5 +57,4 @@
     {% endif %}
   {% endfor %}
 </div>
-
 {% endblock content %}

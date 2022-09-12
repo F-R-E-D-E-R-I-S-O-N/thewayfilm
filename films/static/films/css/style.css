@@ -49,8 +49,7 @@ body {
   background: rgb(255, 255, 255);
   margin-top: 13px;
   margin-left: -15px;
-
-  transition: 10s;
+  transition: 10s
 }
 .base-header__line:hover {
   height: 3px;
@@ -408,20 +407,29 @@ text under container_trailer_new_film  */
 /* @@@@@@@@@@@@@@@@@@@ catalog.html @@@@@@@@@@@@@@@@@@ */
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 .cat-title_of_category{
-  margin-top: 120px;
+  margin-top: 100px;
   margin-left: 10%;
   height: 40px;
   color: rgb(255, 255, 255);
   display: flex;
   font-size: 30px;
-  font-weight: 130;
+  font-weight: 130;  
   
+}
+.cat-other_title_of_category{
+  margin-top: 50px;
+  padding-left: 10%;
+  height: 40px;
+  color: rgb(255, 255, 255);
+  display: flex;
+  font-size: 30px;
+  font-weight: 130;  
 }
 .cat-main_in_catalog {
   width: 82%;
   height: 80%;
   margin-top: 40px;
-  margin-left: 8%;
+  margin-left: 9%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -533,47 +541,3 @@ text under container_trailer_new_film  */
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 /* @@@@@@@@@@@@@@@@@ test.html @@@@@@@@@@@@@@@@@ */
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
-
-.f_c{
-  width: 100%;
-  min-height: 100vh;
-  background: red;
-  margin-top: 60px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.fuck {
-  width: 80%;
-  height: 120%;
-  background: green;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.cnt {
-  width:500px;
-  height: 300px;
-  background: rgb(0, 0, 255);
-  border: 1px solid red 
-}
-.cnt:nth-child(even) {
-  background:yellow;
-  display: flex;
-  justify-content: end;
-}
-
-.suck{
-  background: black;
-  width: 350px;
-  height: 200px;
-
-  
-}
-.suck:hover{
-  background: rgb(255, 255, 255);
-  width: 400px;
-  height: 250px
-}
